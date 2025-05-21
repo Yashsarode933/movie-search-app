@@ -1,0 +1,42 @@
+.movie-detail {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #181818; /* dark background */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #f5c518; /* subtle yellow glow */
+  color: #ffffff; /* white text */
+}
+
+.movie-detail-content {
+  display: flex;
+  gap: 30px;
+}
+
+.movie-poster {
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+.movie-info {
+  flex: 1;
+  color: #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #f5c518;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #ffd93b;
+  text-decoration: underline;
+}

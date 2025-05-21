@@ -1,0 +1,36 @@
+.movie-card {
+  width: 200px;
+  background-color: #131313; /* IMDb dark background */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px #f5c518; /* IMDb yellow glow on hover */
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie-card-info {
+  padding: 10px;
+}
+
+.movie-card-info h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #ffffff;
+}
+
+.movie-card-info p {
+  font-size: 14px;
+  color: #aaaaaa;
+  margin-top: 4px;
+}

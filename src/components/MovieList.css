@@ -1,0 +1,18 @@
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 30px;
+  padding: 20px;
+  background-color: #1f1f1f; /* Dark background to match IMDb style */
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 1500px; /* Center the list and limit width */
+  box-shadow: 0 4px 12px #f5c518; /* Subtle shadow for depth */
+  transition: background-color 0.3s ease;
+}
+
+/* Optional: hover effect on the list container */
+.movie-list:hover {
+  background-color: #252525; /* Slightly lighter on hover */
+}
