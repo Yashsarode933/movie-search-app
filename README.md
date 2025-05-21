@@ -2,6 +2,10 @@
 
 A sleek and modern movie search web app inspired by IMDb. Users can search for movies or series, apply filters by type and year, view details, and manage a personalized watchlist (with sign up/login). Fully responsive and deployed on Vercel.
 
+## 📸 Screenshot
+
+![App Screenshot](./assets/screenshot.png)
+
 ## 🚀 Live Demo
 
 👉 [Click here to view the app](https://movie-search-app-tau-neon.vercel.app/)
