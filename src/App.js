@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MovieList from './components/MovieList';
 import MovieDetail from './pages/MovieDetail';
@@ -9,7 +9,6 @@ import Header from './components/Header';
 import WatchlistPage from './pages/WatchlistPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { debounce } from 'lodash';
 
 function App() {
   const [query, setQuery] = useState('');
@@ -48,19 +47,9 @@ function App() {
     }
   };
 
-  // Debounced handler using useCallback so it doesn't recreate every render
-  const handleSearchChange = useCallback(
-    debounce((val) => {
-      setQuery(val);
-      setPage(1);
-      if (val.length > 2) {
-        fetchMovies(val, 1, false, filterType, filterYear);
-      } else if (val.length === 0) {
-        fetchMovies('Avengers', 1, false);
-      }
-    }, 300),
-    [filterType, filterYear]
-  );
+  const handleSearchChange = (val) => {
+    setQuery(val);
+  };
 
   const handleFilterTypeChange = (e) => {
     const val = e.target.value;
@@ -86,6 +75,14 @@ function App() {
   useEffect(() => {
     fetchMovies('Avengers', 1, false);
   }, []);
+
+  useEffect(() => {
+    if (query.length > 2) {
+      fetchMovies(query, 1, false, filterType, filterYear);
+    } else if (query.length === 0) {
+      fetchMovies('Avengers', 1, false);
+    }
+  }, [query, filterType, filterYear]);
 
   return (
     <Router>
